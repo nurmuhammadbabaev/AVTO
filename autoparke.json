@@ -1,4 +1,22 @@
-[{"id":1,"busName":"Renault","driverName":"Nurik","state":"On Base"},{"id":2,
-    "busName":"Volvo","driverName":"Aktan","state":"On Base"},{"id":3,"busName":
-    "DAF XT","driverName":"Elmir","state":"On Base"}]
-"On Base"}]
+[
+  {
+    "id": 1,
+    "busName": "Renault",
+    "driverName": "Nurik",
+    "state": "On Base"
+  },
+  {
+    "id": 2,
+    "busName": "Volvo",
+    "driverName": "Aktan",
+    "state": "On Base"
+  },
+  {
+    "id": 3,
+    "busName": "DAF XT",
+    "driverName": "Elmir",
+    "state": "On Base"
+  }
+]
+"On Base"}
+]

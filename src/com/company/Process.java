@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Process {
+
     public boolean process()throws IOException {
         Scanner scanner = new Scanner(System.in);
         int driverId;
@@ -56,10 +57,10 @@ public class Process {
                 System.out.println(autoBase[2].toString());
 
             } else {
-                throw new IOException("Не существует водителя под таким \"id\" ");
+                System.err.println("Не существует водителя под таким \"id\" ");
             }
 
-
+            System.out.println();
             System.out.println("Хотите отправить водителя в путь? если да то укажите \"id\" водителя который хотите отправить в путь! если нет то укажите цифру \"0\"");
             driverId = scanner.nextInt();
             if (autoBase[0].getState() == "Route" && driverId == 1) {
@@ -133,6 +134,7 @@ public class Process {
             } else {
                 System.err.println("Не существует водителя под таким \"id\" ");
             }
+            System.out.println();
             System.out.println("Хотите отправить грузовика на ремонт? если да то укажите \"id\" грузовика который хотите отправить на ремонт! если нет то укажите цифру \"0\"");
             driverId = scanner.nextInt();
             if (autoBase[0].getState() == "Repair" && driverId == 1) {
@@ -205,8 +207,8 @@ public class Process {
 
             } else {
                 System.err.println("Не существует водителя под таким \"id\" ");
-
             }
+            System.out.println();
             System.out.println("***************************");
             System.out.println("Хотите вернуть грузовика на базу? если да то укажите \"id\" грузовика который хотите вернуть на базу!");
             driverId = scanner.nextInt();
@@ -270,7 +272,7 @@ public class Process {
             } else {
                 System.err.println("Не существует водителя под таким \"id\" ");
             }
-
+            System.out.println();
             System.out.println("***************************");
             System.out.println("про каких грузовиках вы хотите получить информацию?");
             System.out.println("->  Состояние \"на базе\" - Нажмите клавищу \"О\"\n" +
@@ -306,6 +308,7 @@ public class Process {
                 } else {
                     System.err.println("В базе нет водителя");
                 }
+                System.out.println();
             }else if (state.equals("R")) {
                 System.out.println("# |Bus\t\t|Driver\t|State");
                 System.out.println("--+---------+-------+-----");
@@ -333,6 +336,7 @@ public class Process {
                 } else {
                     System.err.println("В пути нет водителя");
                 }
+                System.out.println();
             } else if (state.equals("P")) {
                 System.out.println("# |Bus\t\t|Driver\t|State");
                 System.out.println("--+---------+-------+-----");
@@ -361,24 +365,67 @@ public class Process {
                     System.err.println("\nВ ремонте нет водителя!\n");
                 }
             }
-            System.out.println("Четвертый этап: \n" +
-                    "После вывода таблиц, программа должна запросить у пользователя идентификатор (id) грузовика и вывести информацию о нем:");
+            System.out.println();
+            System.out.println("После вывода таблиц, программа должна запросить у пользователя идентификатор (id) грузовика и вывести информацию о нем:");
            driverId=scanner.nextInt();
             System.out.println("# |Bus\t\t|Driver\t|State");
             System.out.println("--+---------+-------+-----");
             if (driverId==1){
-                System.out.println(autoBase[0].toString());
+                System.out.print("№\t");
+                System.out.println(autoBase[0].getId());
+                System.out.print("Bus:\t");
+                System.out.println(autoBase[0].getBusName());
+                System.out.print("Driver:\t");
+                System.out.println(autoBase[0].getDriverName());
+                System.out.print("State:\t");
+                System.out.println(autoBase[0].getState());
             }else if(driverId==2){
-                System.out.println(autoBase[1].toString());
+                System.out.print("№\t");
+                System.out.println(autoBase[1].getId());
+                System.out.print("Bus:\t");
+                System.out.println(autoBase[1].getBusName());
+                System.out.print("Driver:\t");
+                System.out.println(autoBase[1].getDriverName());
+                System.out.print("State:\t");
+                System.out.println(autoBase[1].getState());
             }else if(driverId==3){
-                System.out.println(autoBase[2].toString());
+                System.out.print("№\t");
+                System.out.println(autoBase[2].getId());
+                System.out.print("Bus:\t");
+                System.out.println(autoBase[2].getBusName());
+                System.out.print("Driver:\t");
+                System.out.println(autoBase[2].getDriverName());
+                System.out.print("State:\t");
+                System.out.println(autoBase[2].getState());
             }else if(driverId==0){
-                System.out.println(autoBase[0].toString());
-                System.out.println(autoBase[1].toString());
-                System.out.println(autoBase[2].toString());
+                System.out.print("№\t");
+                System.out.println(autoBase[0].getId());
+                System.out.print("Bus:\t");
+                System.out.println(autoBase[0].getBusName());
+                System.out.print("Driver:\t");
+                System.out.println(autoBase[0].getDriverName());
+                System.out.print("State:\t");
+                System.out.println(autoBase[0].getState());
+                System.out.print("№\t");
+                System.out.println(autoBase[1].getId());
+                System.out.print("Bus:\t");
+                System.out.println(autoBase[1].getBusName());
+                System.out.print("Driver:\t");
+                System.out.println(autoBase[1].getDriverName());
+                System.out.print("State:\t");
+                System.out.println(autoBase[1].getState());
+                System.out.print("№\t");
+                System.out.println(autoBase[2].getId());
+                System.out.print("Bus:\t");
+                System.out.println(autoBase[2].getBusName());
+                System.out.print("Driver:\t");
+                System.out.println(autoBase[2].getDriverName());
+                System.out.print("State:\t");
+                System.out.println(autoBase[2].getState());
             }else {
-                System.out.println("нет водителья под таким id!");
+                System.err.println("нет водителья под таким id!");
             }
+            System.out.println();
         }
     }
 }

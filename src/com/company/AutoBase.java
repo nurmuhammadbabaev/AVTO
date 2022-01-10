@@ -1,4 +1,5 @@
 package com.company;
+
 import java.util.Scanner;
 
 public class AutoBase {
@@ -14,7 +15,7 @@ public class AutoBase {
         this.id = id;
         this.busName = busName;
         this.driverName = driverName;
-        this.state=state;
+        this.state = state;
 
     }
 
@@ -41,28 +42,32 @@ public class AutoBase {
     public void setState(String state) {
         this.state = state;
     }
-@Override
+
+    @Override
     public String toString() {
 
-        return  id + " |" + busName + "\t|" + driverName +"\t|"+state;
+        return id + " |" + busName + "\t|" + driverName + "\t|" + state;
     }
 
     public String changeDriver() {
-        Scanner scanner=new Scanner(System.in);
-        String s= scanner.next();
+        Scanner scanner = new Scanner(System.in);
+        String s = scanner.next();
 
-    return   s ;
-    }
-    public String  startDriving() {
-
-        return   state="Route" ;
+        return s;
     }
 
-    public String  startRepair() {
+    public String startDriving() {
 
-        return   state="Repair" ;
+        return state = "Route";
     }
-    public String backToBase(){
 
-   return state="On Base"; }
+    public String startRepair() {
+
+        return state = "Repair";
+    }
+
+    public String backToBase() {
+
+        return state = "On Base";
+    }
 }
